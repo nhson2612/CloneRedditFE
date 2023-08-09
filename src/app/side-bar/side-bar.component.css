@@ -1,0 +1,26 @@
+.side-bar{
+    margin: 10px 0;
+    border: 1px solid #d7dadc;
+    border-radius: 8px;
+}
+
+
+.banner {
+    background-image: url(https://www.redditstatic.com/desktop2x/img/id-cards/home-banner@2x.png);
+    height: 34px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+button {
+    font-weight: 700;
+    background-color: #ccc;
+    border: 0;
+    border-radius: 20px;
+    width: 170px;
+    height: 40px;
+}
+
+button:hover {
+    opacity: 0.6;
+}

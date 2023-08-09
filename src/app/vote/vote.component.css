@@ -1,0 +1,6 @@
+.vote-container{
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

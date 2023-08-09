@@ -3,16 +3,62 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { AuthService } from './auth/AuthService.service';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { PostTitleComponent } from './post-title/post-title.component';
+import { VoteComponent } from './vote/vote.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthGuard } from './auth/AuthGuard';
+import { TokenIntercepter } from './auth/TokenIntercepter';
+import { HomeComponent } from './home/home.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { SubredditSideBarComponent } from './subreddit-side-bar/subreddit-side-bar.component';
+import { SubredditService } from './SubredditService.service';
+import { CreateSubredditComponent } from './create-subreddit/create-subreddit.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+
+const routes: Routes = [
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: HomeComponent , canActivate: [AuthGuard]}
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    SignupComponent,
+    LoginComponent,
+    PostTitleComponent,
+    VoteComponent,
+    HomeComponent,
+    SideBarComponent,
+    SubredditSideBarComponent,
+    CreateSubredditComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxWebstorageModule.forRoot(),
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard,SubredditService,
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenIntercepter,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

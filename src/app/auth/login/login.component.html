@@ -1,0 +1,23 @@
+<div class="signup-container">
+
+    <div class="title">
+        <p>LOGIN</p>
+    </div>
+
+    <div class="form-login">
+        <form [formGroup]="formLogin"(ngSubmit)="login()">
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input formControlName="username" type="text" placeholder="Username"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input formControlName="password" type="password" placeholder="Password"></td>
+                </tr>
+            </table>
+            <input class="submit" type="submit" value="LOGIN">
+        </form>
+    </div>
+
+</div>

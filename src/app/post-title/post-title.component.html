@@ -1,0 +1,40 @@
+<div class="row post" *ngFor="let post of posts">
+
+    <!-- SHOW VOTE -->
+    <div class="col-1">
+        <app-vote [post]="post"></app-vote>
+    </div>
+
+    <!-- SHOW CONTAIN -->
+
+    <div class="col-11">
+
+        <span class="subreddit-infor">
+            <span class="subreddit-text"><a href="" class="post-url">{{ post.subredditName }}</a></span>
+            <span>.Post by <a href="username">{{ post.username }}</a></span>
+            <span> {{ post.duration}}</span>
+        </span>
+
+        <hr>
+
+        <div class="post-title">
+            <a href="" class="post-name">{{ post.postName }}</a>
+        </div>
+        <div class="post-text">
+            <p>{{ post.description }}</p>
+        </div>
+
+        <hr>
+
+        <!-- Comment section -->
+
+        <span>
+            <a href="" class="btnComment">
+                <fa-icon [icon]="btnComment"></fa-icon>
+                Comment
+            </a>
+        </span>
+
+    </div>
+
+</div>

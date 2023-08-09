@@ -1,0 +1,61 @@
+.signup-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border: 1px solid #ccc;
+}
+
+.signup-container .title {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.form-login {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.form-login .label-container{
+    float: left;
+}
+
+.form-login .input-container{
+    float: right;
+}
+
+.form-login table{
+    border-collapse: separate;
+    border-spacing: 1em 1em;
+}
+.form-login label {
+    display: block;
+    text-align: right;
+}
+
+.form-login input {
+    display: block;
+    padding: 5px 10px;
+}
+
+.form-login .submit {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-login .submit:hover{
+    cursor: pointer;
+    background-color: #FF5414;
+    color: #fff;
+    border: 1px solid #FF5414;
+    border-radius: 5px;
+}
+
+form .ng-touched.ng-invalid{
+    border: 1px solid red;
+    border-radius: 5px;
+}

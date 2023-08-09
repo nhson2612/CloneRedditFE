@@ -1,0 +1,27 @@
+<div class="signup-container">
+
+    <div class="title">
+        <p>REGISTER</p>
+    </div>
+
+    <div class="form-login">
+        <form [formGroup]="formSignup"(ngSubmit)="register()">
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td><input formControlName="email" type="text" placeholder="Your_email@example.com"></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input formControlName="username" type="text" placeholder="Username"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input formControlName="password" type="password" placeholder="Password"></td>
+                </tr>
+            </table>
+            <input class="submit" type="submit" value="REGISTER">
+        </form>
+    </div>
+
+</div>

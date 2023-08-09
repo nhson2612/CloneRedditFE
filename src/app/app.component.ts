@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PostService } from './post.service';
+import { PostModel } from './PostModel';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CloneReddit';
+
+
 }

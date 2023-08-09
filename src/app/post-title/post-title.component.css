@@ -1,0 +1,27 @@
+.post {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.subreddit-infor {
+    font-size: 10px;
+}
+
+.subreddit-infor a,
+.post-title a,
+.btnComment{
+    text-decoration: none;
+}
+
+.post-title .post-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.post-text{
+    font-size: 15px;
+}
+
+.btnComment {
+    font-size: 15px;
+}
