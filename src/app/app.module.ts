@@ -22,11 +22,18 @@ import { SubredditSideBarComponent } from './subreddit-side-bar/subreddit-side-b
 import { SubredditService } from './SubredditService.service';
 import { CreateSubredditComponent } from './create-subreddit/create-subreddit.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { SubredditsListComponent } from './subreddits-list/subreddits-list.component';
+import { VoteService } from './VoteService.service';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { ViewPostComponent } from './view-post/view-post.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent , canActivate: [AuthGuard]}
+  { path: '', component: HomeComponent , canActivate: [AuthGuard]},
+  { path: 'create-post', component: CreatePostComponent , canActivate: [AuthGuard]},
+  { path: 'submit', component: CreateSubredditComponent , canActivate: [AuthGuard]},
+  { path: 'post/:id', component: ViewPostComponent , canActivate: [AuthGuard]},
 ]
 
 @NgModule({
@@ -41,7 +48,9 @@ const routes: Routes = [
     SideBarComponent,
     SubredditSideBarComponent,
     CreateSubredditComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    SubredditsListComponent,
+    ViewPostComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +60,10 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
-    FontAwesomeModule
+    FontAwesomeModule,
+    EditorModule
   ],
-  providers: [AuthService,AuthGuard,SubredditService,
+  providers: [AuthService,AuthGuard,SubredditService,VoteService,
   {
     provide:HTTP_INTERCEPTORS,
     useClass:TokenIntercepter,

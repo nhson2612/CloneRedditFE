@@ -45,5 +45,9 @@ export class CreateSubredditComponent {
       console.log(error);
     });
   }
-  
+
+  goToHome(){
+    this.router.navigateByUrl('');
+  }
+
 }

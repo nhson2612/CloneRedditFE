@@ -6,3 +6,8 @@
     padding: 10px;
     text-align: center;
 }
+
+ul {
+    height: 250px;
+    overflow-y: scroll;
+}

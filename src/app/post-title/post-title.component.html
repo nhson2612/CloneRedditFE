@@ -21,7 +21,7 @@
             <a href="" class="post-name">{{ post.postName }}</a>
         </div>
         <div class="post-text">
-            <p>{{ post.description }}</p>
+            <p [innerHTML]="post.description"></p>
         </div>
 
         <hr>
