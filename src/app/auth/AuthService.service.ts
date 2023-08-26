@@ -49,4 +49,8 @@ export class AuthService implements OnInit{
     isLoggedIn():boolean{
         return this.getJwtToken() != null;
     }
+
+    getUsername():string{
+        return this.localStorage.retrieve('username');
+    }
 }

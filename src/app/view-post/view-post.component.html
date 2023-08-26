@@ -1,1 +1,62 @@
-<p>view-post works!</p>
+<div class="container px-5">
+
+    <div class="d-flex justify-content-between">
+
+        <div class="post-infor" style="font-size: 15px;">
+
+            <fa-icon [icon]="voteUp" class="px-3 border-end"></fa-icon>
+            <span class="px-3 border-end">{{post.voteCount}}</span>
+            <fa-icon class="px-3 border-end" [icon]="voteDown"></fa-icon>
+            <fa-icon class="px-3 border-end" [icon]="postIcon"></fa-icon>
+            <p class="ps-5" style="display: inline;">{{post.postName}}</p>
+        </div>
+
+        <fa-icon [icon]="closeIcon"style="font-size : 15px;"></fa-icon>
+
+    </div>
+
+    <div class="row my-5">
+
+        <span class="subreddit-infor">
+            <span class="subreddit-text"><a href="" class="post-url" style="text-decoration: none;">{{ post.subredditName }}</a></span>
+            <span>.Post by <a href="username" style="text-decoration: none;">{{ post.username }}</a></span>
+            <span> {{ post.duration}}</span>
+        </span>
+
+        <hr>
+
+        <div class="post-title">
+            <p>{{ post.postName }}</p>
+        </div>
+        <div class="post-text">
+            <p [innerHTML]="post.description"></p>
+        </div>
+
+    </div>
+
+    <div class="row comment-section">
+
+        <p>Comment as <a href="">{{username}}</a></p>
+        
+        <form [formGroup]="commentForm" (submit)="addComment()">
+
+            <textarea class="p-3" formControlName="text" style="width: 100%; min-height: 100px; font-size: 15px;" placeholder="What are your throughts?"></textarea>
+
+            <input type="submit" class="rounded-pill btn btn-primary" value="Comment" style="float: right;">
+
+        </form>
+
+    </div>
+
+    <div class="row" *ngFor="let comment of comments">
+
+        <div class="comment">
+            <p>{{ comment.username }}</p>
+    
+            <p>{{ comment.text }}</p>
+        </div>
+
+
+    </div>
+
+</div>

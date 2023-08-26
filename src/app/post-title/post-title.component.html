@@ -18,7 +18,7 @@
         <hr>
 
         <div class="post-title">
-            <a href="" class="post-name">{{ post.postName }}</a>
+            <a routerLink="/post/{{post.id}}" class="post-name">{{ post.postName }}</a>
         </div>
         <div class="post-text">
             <p [innerHTML]="post.description"></p>
@@ -29,8 +29,8 @@
         <!-- Comment section -->
 
         <span>
-            <a href="" class="btnComment">
-                <fa-icon [icon]="btnComment"></fa-icon>
+            <a routerLink="/post/{{post.id}}" class="btnComment">
+                <fa-icon [icon]="btnComment" (click)="goToPost(post)"></fa-icon>
                 Comment
             </a>
         </span>
